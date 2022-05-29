@@ -1,15 +1,22 @@
 import './App.css';
 import Footer from './Footer';
 import Header from './Header';
-import SCPs from './SCPs';
+import Home from './Home';
+import Entries from './Entries';
+import About from './About';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
     return (
-     <div>
-        <Header />
-        <SCPs />
-        <Footer />
-     </div>
+     <Router>
+        <Header/>
+        <Routes>
+          <Route path='/Home' element={<Home />}/>
+          <Route path='/Entries' element={<Entries />}/>
+          <Route path='/About' element={<About />}/>
+        </Routes>
+        <Footer/>
+     </Router>
     );
   }
   

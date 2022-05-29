@@ -1,5 +1,195 @@
 body{
-   
-    background-color: #d8d8ac;
-    background-image: linear-gradient(315deg, #d8d8ac 0%, #c8c85e 74%);
+    overflow-x: hidden; /* This hides the side scrolling. This DOES NOT fix the problem, just goes around it for the time being. */
+    background-color: #6a6a6a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
+.container {
+    background-color: #797676;
+    border: #444343;
+    border-color: black;
+}
+footer{
+    background: #444343;
+    height: auto;
+    width: 100vw;
+    font-family: 'Courier New', Courier, monospace;
+    padding-top: 15px;
+    color: black;
+}
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h1{
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: capitalize;
+    top: 0;
+    position: bottom;
+    width: 100vw;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 20px;
+    font-size: 18px;
+}
+.pagelinks {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.pagelinks li{
+    margin: 0 10px;
+}
+.pagelinks a{
+    text-decoration: none;
+    color: rgb(148, 147, 147);
+}
+.pagelinks a{
+    font-size: 1.1rem;
+    transition: color .4 ease;
+}
+.pagelinks a:hover{
+    color: #353535;
+}
+.footer-bottom{
+    background: #333232;
+    width: 100vw;
+    padding: 1px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+.images { /* container for the images. for box shadowing later */
+  box-shadow: #7D7D7D;
+  display: flex;
+  border: 1px solid rgba(59, 59, 59, 0.5);
+  justify-content: center;
+  text-align: center;
+  background-color: #6a6a6a;
+  border-radius: 3px; 
+  height: auto; 
+  width: 100%; 
+}
+#Floatin {
+  float: right;
+  margin: 10px;
+  margin-top: 20px;
+  height: auto;
+  width: 600px;
+}
+#navbar {
+    overflow: hidden;
+    background-color: #444343;
+    padding: 10px 10px; /* Large padding which will shrink on scroll (using JS) */
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+    /*position: fixed; /* Sticky/fixed navbar */
+    width: 100%;
+    top: 0; 
+    z-index: 99; /* this fixed an issue. */
+} 
+  
+  
+  #navbar a { /* navbar links */
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    line-height: 5px;
+    border-radius: 50px;
+  }
+
+
+
+  #navbar #logo { /* logo obv */
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.4s;
+    z-index: 99;
+  }
+
+  #navbar a:hover { /* navbar buttons, for hovering */
+    background-color:  #7D7D7D;
+    color: black;
+  }
+
+
+  #navbar a.active {/* active button colors/highlight */
+    background-color: #7D7D7D;
+    color: white;
+  }
+
+  /* will put links on the right*/
+  #navbar-right {
+    float: right;
+    padding-top: 18px;
+  }
+
+  /* if on phone, navbar will change to vertical, or small screen or whatever.*/
+  @media screen and (max-width: 700px) { /* max width, means when width hits this size it will use the code below */
+    #navbar {
+      padding: 5px 10px !important; /* not entirely sure that this does, something about screen sizes on specific screens, needs more work done */
+    }
+    #navbar li {
+      padding-top: 0%;
+      padding-block: 0;
+      float: center;
+      display: block;
+      text-align: center;
+      align-items: center;
+      
+      
+    }
+    #navbar a {
+        padding-top: 0%;
+        float: none;
+        display: block;
+        text-align: center;
+        align-items: center;
+        
+        
+      }
+    #navbar-right {
+      float: none;
+    }
+    #navbar #logo { /* logo obv */
+        padding-top: 10px;
+        font-size: 35px;
+        font-weight: bold;
+        transition: 0.4s;
+    }
+  }
+
+
+
+#header_logo {
+  height: 70px;
+  width: auto;
+  float: left;
+  margin-right: 25px;
+  padding: 2px;
+  margin-top: 4px;
+  z-index: -1;
+}
+  
