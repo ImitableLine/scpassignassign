@@ -4,12 +4,12 @@ function Footer()
 {
     return(
     
-        <footer>
+        <footer className='footer-parent'>
             <div className="footer-content">
                 <h1>SCP Foundation</h1>
                 <p>We will find you, and we will contain you. &trade;</p>
-                <nav id="navbar-right">
-                    <ul className="nav text-white">
+                <nav id="pagelinks">
+                    <ul className="container-a">
                     <Link to="/Home" className='nav-item'>
                         <li className='navbar a'>Home</li>
                     </Link>

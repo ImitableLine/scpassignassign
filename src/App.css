@@ -1,15 +1,40 @@
 body{
     overflow-x: hidden; /* This hides the side scrolling. This DOES NOT fix the problem, just goes around it for the time being. */
     background-color: #6a6a6a;
+  background-image: url(/public/Images/background.jpg);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 .container {
     background-color: #797676;
-    border: #444343;
-    border-color: black;
+
+
+}
+.container p {
+  padding-left: 5px;
+  padding-top: 5;
+
+}
+.container-a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+  
+}
+.container-a :active{
+  background-color: #7D7D7D;
+    color: white;
+}
+.container-a :hover{
+  background-color: #7D7D7D;
+    color: white;
 }
 footer{
     background: #444343;
@@ -19,12 +44,14 @@ footer{
     padding-top: 15px;
     color: black;
 }
+
 .footer-content {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    bottom: 0;
 }
 .footer-content h1{
     font-size: 25px;
@@ -40,25 +67,25 @@ footer{
     line-height: 20px;
     font-size: 18px;
 }
-.pagelinks {
+#pagelinks {
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 1rem 0 3rem 0;
 }
-.pagelinks li{
+#pagelinks li{
     margin: 0 10px;
 }
-.pagelinks a{
+#pagelinks a{
     text-decoration: none;
     color: rgb(148, 147, 147);
 }
-.pagelinks a{
+#pagelinks a{
     font-size: 1.1rem;
     transition: color .4 ease;
 }
-.pagelinks a:hover{
+#pagelinks a:hover{
     color: #353535;
 }
 .footer-bottom{
@@ -80,12 +107,13 @@ footer{
 .images { /* container for the images. for box shadowing later */
   box-shadow: #7D7D7D;
   display: flex;
-  border: 1px solid rgba(59, 59, 59, 0.5);
   justify-content: center;
   text-align: center;
   background-color: #6a6a6a;
   border-radius: 3px; 
   height: auto; 
+  border: 12px groove #414141;
+
   width: 100%; 
 }
 #Floatin {
@@ -97,14 +125,18 @@ footer{
 }
 #navbar {
     overflow: hidden;
-    background-color: #444343;
-    padding: 10px 10px; /* Large padding which will shrink on scroll (using JS) */
+    /* background-color: #444343; */
+    background: rgb(121,118,118);
+    background: linear-gradient(0deg, rgb(82, 81, 81) 0%, rgb(36, 35, 35) 100%);
     transition: 0.4s; /* Adds a transition effect when the padding is decreased */
     /*position: fixed; /* Sticky/fixed navbar */
     width: 100%;
     top: 0; 
+    margin-bottom: 25px;
     z-index: 99; /* this fixed an issue. */
-} 
+
+}
+
   
   
   #navbar a { /* navbar links */
@@ -123,6 +155,7 @@ footer{
 
   #navbar #logo { /* logo obv */
     font-size: 35px;
+    padding-top: 18px;
     font-weight: bold;
     text-align: center;
     transition: 0.4s;
@@ -145,9 +178,31 @@ footer{
     float: right;
     padding-top: 18px;
   }
-
+  #footer-links {
+    list-style: none;
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    line-height: 5px;
+    border-radius: 50px;
+  }
+  #header_logo {
+    height: 70px;
+    width: auto;
+    float: left;
+  
+    margin-right: 25px;
+    padding: 2px;
+    margin-top: 0px;
+    z-index: -1;
+  }
+  
   /* if on phone, navbar will change to vertical, or small screen or whatever.*/
-  @media screen and (max-width: 700px) { /* max width, means when width hits this size it will use the code below */
+  @media screen and (max-width: 900px) { /* max width, means when width hits this size it will use the code below */
     #navbar {
       padding: 5px 10px !important; /* not entirely sure that this does, something about screen sizes on specific screens, needs more work done */
     }
@@ -174,22 +229,89 @@ footer{
       float: none;
     }
     #navbar #logo { /* logo obv */
-        padding-top: 10px;
         font-size: 35px;
         font-weight: bold;
-        transition: 0.4s;
     }
   }
 
+/* The sidebar menu The sidebar menu  The sidebar menu  The sidebar menu  The sidebar menu  The sidebar menu  The sidebar menu  */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
 
+/* The sidebar links */
+.sidebar a {
+  padding: 5px 0px 5px 12px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  list-style: circle;
+}
 
-#header_logo {
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #666565;
+  color: rgb(255, 255, 255);
+  padding: 6px 8px;
+  border: none;
+  position: fixed;
+  opacity: 50%;
+  padding-top: -50px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 0px;
+}
+#header_logo_sidebar {
   height: 70px;
   width: auto;
-  float: left;
+  float: top;
+
   margin-right: 25px;
   padding: 2px;
-  margin-top: 4px;
+  margin-top: -75px;
+  margin-bottom: 0px;
   z-index: -1;
 }
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 900px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
+/* The sidebar menu The sidebar menu  The sidebar menu  The sidebar menu  The sidebar menu  The sidebar menu  The sidebar menu  */
   
