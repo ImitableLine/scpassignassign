@@ -42,27 +42,26 @@ function SCPs()
     var oth = "Other Information:";
     
     
-    const ScpNumCopy = [];
-    const ScpOCCopy = [];
-    const ScpCPCopy = [];
-    const ScpDescCopy = [];
-    const ScpRefCopy = [];
-    const ScpOthCopy = []; 
-    const ScpImgCopy = [];
+    var ScpNumCopy = [];
+    var ScpOCCopy = [];
+    var ScpCPCopy = [];
+    var ScpDescCopy = [];
+    var ScpRefCopy = [];
+    var ScpOthCopy = []; 
+    var ScpImgCopy = [];
     var temp = 0;
         
     const Data = currentState.map(
         scp => {
-            if (temp === 0) {
-                ScpNumCopy[temp] = scp.scpNumber;
-                ScpOCCopy[temp] = scp.objectClass;
-                ScpCPCopy[temp] = scp.scp;
-                ScpDescCopy[temp] = scp.description;
-                ScpRefCopy[temp] = scp.referenece;
-                ScpOthCopy[temp] = scp.other;
-                ScpImgCopy[temp] = scp.img;
-                temp = temp+1; 
-            }    
+            ScpNumCopy[temp] = scp.scpNumber;
+            ScpOCCopy[temp] = scp.objectClass;
+            ScpCPCopy[temp] = scp.scp;
+            ScpDescCopy[temp] = scp.description;
+            ScpRefCopy[temp] = scp.referenece;
+            ScpOthCopy[temp] = scp.other;
+            ScpImgCopy[temp] = scp.img;
+            temp = temp+1; 
+            
             
             if (scp.referenece === "" ) {
                 ref = "";
@@ -72,11 +71,9 @@ function SCPs()
             }
         }
     )
-       
-
 
     return(
-        <div className="container"> 
+        <div key={uInput} className="container">
             {Data} 
             <img src={ScpImgCopy[uInput]} alt={ScpNumCopy[uInput]} class="images" id="Floatin"/>
             <p><strong>SCP Number:</strong> {ScpNumCopy[uInput]}</p>
@@ -85,9 +82,11 @@ function SCPs()
             <p><strong>Description:</strong> {ScpDescCopy[uInput]}</p>
             <p><strong>{ref}</strong> {ScpRefCopy[uInput]}</p>
             <p><strong>{oth}</strong> {ScpOthCopy[uInput]}</p>
+            
         </div>
     );
 }
+
 
 
 export default SCPs;    
