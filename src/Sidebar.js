@@ -22,7 +22,7 @@ function Sidebar() {
         <div>
             <div id="mySidebar" class="sidebar" >
             <img src='Images/logo.png' alt='SCP Logo' id='header_logo_sidebar' />
-                <a href='#Sidebar' class="closebtn" onClick={closeNav}>&times;</a>
+                <a href='#Sidebar' className="closebtn" onClick={closeNav}>&times;</a>
                 <Link to="/Home" className='nav-item'>
                 <li href='#Home' class="w3-bar-item w3-button">Home</li>
                 </Link>
@@ -32,6 +32,7 @@ function Sidebar() {
                 <Link to="/About" className='nav-item'>
                 <li href='#Home' class="w3-bar-item w3-button">About</li>
                 </Link>
+               
                 
                 
             </div>

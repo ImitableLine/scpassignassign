@@ -1,7 +1,6 @@
 body{
-    overflow-x: hidden; /* This hides the side scrolling. This DOES NOT fix the problem, just goes around it for the time being. */
+  overflow-x: hidden; /* This hides the side scrolling. This DOES NOT fix the problem, just goes around it for the time being. */
     background-color: #6a6a6a;
-  background-image: url(/public/Images/background.jpg);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -9,15 +8,57 @@ body{
 html{
   scroll-behavior: smooth;
 }
-
-.container {
-    background-color: #797676;
-
-
+#warning {
+  text-align: center;
 }
+#about {
+  padding: 30px;
+  font-size: 20px;
+  box-shadow: 5px;
+  border-radius: 10px;
+}
+.container {
+  background-color: #b8b4b4;
+  border-radius: 26px 26px 26px 26px;
+  -webkit-border-radius: 26px 26px 26px 26px;
+  -moz-border-radius: 26px 26px 26px 26px;
+  border-top: 5px double #6a6a6a;
+  border-bottom: 5px double #6a6a6a;
+  padding-top: 5px;
+}
+.entrie-1 {
+    padding-bottom: 15px;
+    
+}
+.container-entries {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  
+}
+.ebtn {
+  background-color: #545754;
+  border: 2px solid #414141;
+  color: white;
+  padding: 15px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+}
+  .ebtn a:active{
+    background-color: #7D7D7D;
+    color: Black;
+  }
+  .ebtn a:hover {
+    background-color: #7D7D7D;
+    color: rgb(252, 252, 252);
+  }
 .container p {
   padding-left: 5px;
-  padding-top: 5;
+  padding-top: 15px;
 
 }
 .container-a {
@@ -37,12 +78,17 @@ html{
     color: white;
 }
 footer{
-    background: #444343;
-    height: auto;
-    width: 100vw;
-    font-family: 'Courier New', Courier, monospace;
-    padding-top: 15px;
-    color: black;
+  background: #444343;
+  height: auto;
+  width: 100vw;
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+  bottom: 0;
+}
+.footer-parent {
+  bottom: 0;
+  padding-top: 50px;
+  background-image: linear-gradient(to bottom, #6a6a6a, #2a2a2a);
 }
 
 .footer-content {
@@ -51,9 +97,9 @@ footer{
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    bottom: 0;
 }
 .footer-content h1{
+    font-style:  bold;
     font-size: 25px;
     font-weight: 400;
     text-transform: capitalize;
@@ -62,7 +108,6 @@ footer{
     width: 100vw;
 }
 .footer-content p{
-    max-width: 500px;
     margin: 10px auto;
     line-height: 20px;
     font-size: 18px;
@@ -72,7 +117,6 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0 3rem 0;
 }
 #pagelinks li{
     margin: 0 10px;
@@ -88,22 +132,7 @@ footer{
 #pagelinks a:hover{
     color: #353535;
 }
-.footer-bottom{
-    background: #333232;
-    width: 100vw;
-    padding: 1px 0;
-    text-align: center;
-}
-.footer-bottom p{
-    font-size: 14px;
-    word-spacing: 2px;
-    text-transform: capitalize;
-}
-.footer-bottom span{
-    text-transform: uppercase;
-    opacity: .4;
-    font-weight: 200;
-}
+
 .images { /* container for the images. for box shadowing later */
   box-shadow: #7D7D7D;
   display: flex;
@@ -112,9 +141,10 @@ footer{
   background-color: #6a6a6a;
   border-radius: 3px; 
   height: auto; 
-  border: 12px groove #414141;
-
+  border: 6px solid #414141;
+  max-height: 800px;
   width: 100%; 
+
 }
 #Floatin {
   float: right;
@@ -127,12 +157,12 @@ footer{
     overflow: hidden;
     /* background-color: #444343; */
     background: rgb(121,118,118);
-    background: linear-gradient(0deg, rgb(82, 81, 81) 0%, rgb(36, 35, 35) 100%);
+    background-image: linear-gradient(to top, #6a6a6a, #2a2a2a);
     transition: 0.4s; /* Adds a transition effect when the padding is decreased */
     /*position: fixed; /* Sticky/fixed navbar */
     width: 100%;
     top: 0; 
-    margin-bottom: 25px;
+    padding-bottom: 25px;
     z-index: 99; /* this fixed an issue. */
 
 }
@@ -177,6 +207,7 @@ footer{
   #navbar-right {
     float: right;
     padding-top: 18px;
+    margin-right: 20px;
   }
   #footer-links {
     list-style: none;
@@ -194,15 +225,35 @@ footer{
     height: 70px;
     width: auto;
     float: left;
-  
     margin-right: 25px;
     padding: 2px;
     margin-top: 0px;
     z-index: -1;
   }
+  @media screen and (max-width: 990px) {
+    #Floatin {
+      float:none;
+      align-content: center;
+      margin-left: 35px;
+    }
+    .ebtn{
+      padding: 5px 8px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      margin: 5px;
+    }
+  }
+ 
+    
   
   /* if on phone, navbar will change to vertical, or small screen or whatever.*/
   @media screen and (max-width: 900px) { /* max width, means when width hits this size it will use the code below */
+    #header_logo {
+      width: 0;
+      height: 0;
+    }
     #navbar {
       padding: 5px 10px !important; /* not entirely sure that this does, something about screen sizes on specific screens, needs more work done */
     }
@@ -211,6 +262,7 @@ footer{
       padding-block: 0;
       float: center;
       display: block;
+
       text-align: center;
       align-items: center;
       
@@ -232,8 +284,20 @@ footer{
         font-size: 35px;
         font-weight: bold;
     }
+    #Floatin {
+      max-width:95%;height:auto;
+    }
   }
-
+  @media screen and (max-width: 776px) {
+    #Floatin {
+      margin-left: 10px;
+    }
+  }
+  @media screen and (max-width: 324px) {
+    #Floatin {
+      margin-left: 5px;
+    }
+  }
 /* The sidebar menu The sidebar menu  The sidebar menu  The sidebar menu  The sidebar menu  The sidebar menu  The sidebar menu  */
 .sidebar {
   height: 100%; /* 100% Full-height */

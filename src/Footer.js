@@ -21,10 +21,10 @@ function Footer()
                     </Link>
                     </ul>
                 </nav>
+                <p>Copyright &copy;1981 SCP Foundation designed by <span>Two Spuds That Cant Code</span></p>
             </div>
-            <div className="footer-bottom">
-                <p>copyright &copy;1981 SCP Foundation designed by <span>nerds</span></p>
-            </div>
+            
+
         </footer>
     
     );
