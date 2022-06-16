@@ -21,7 +21,7 @@ function Footer()
                     </Link>
                     </ul>
                 </nav>
-                <p>Copyright &copy;1981 SCP Foundation designed by <span>Two Spuds That Cant Code</span></p>
+                <p>Copyright &copy;1881 SCP Foundation designed by <span>Ricky And David</span></p>
             </div>
             
 

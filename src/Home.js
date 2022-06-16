@@ -1,7 +1,7 @@
 function Home ()
 {
 return (
-    <div class="container" id="about">
+    <div class="container" id="home">
     <div id="warning">     
         <h2><code>WARNING: THE FOUNDATION DATABASE IS</code></h2>
         <h1><code>CLASSIFIED</code></h1>  

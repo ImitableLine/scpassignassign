@@ -5,13 +5,19 @@ body{
     display: flex;
     flex-direction: column;
 }
+#scphead {
+  text-align: center;
+}
 html{
   scroll-behavior: smooth;
 }
 #warning {
   text-align: center;
+  background-color: #cecece;
+  border-radius: 15px;
+  padding: 10px;
 }
-#about {
+#home {
   padding: 30px;
   font-size: 20px;
   box-shadow: 5px;
@@ -97,6 +103,7 @@ footer{
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    font-weight: bold;
 }
 .footer-content h1{
     font-style:  bold;
@@ -172,11 +179,12 @@ footer{
   #navbar a { /* navbar links */
     float: left;
     color: black;
+    font-weight: bold;
     text-align: center;
     padding: 10px;
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 5px;
     border-radius: 50px;
   }
@@ -184,7 +192,7 @@ footer{
 
 
   #navbar #logo { /* logo obv */
-    font-size: 35px;
+    font-size: 40px;
     padding-top: 18px;
     font-weight: bold;
     text-align: center;
